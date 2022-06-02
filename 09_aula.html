@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Denis Rodrigues">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="aulas de javascript">
+    <title>JS</title>
+</head>
+
+<body>
+    <h1>Exercicios</h1>
+
+    <script> // while
+        var num = parseFloat(prompt("Digite um número: "));
+
+        var i = parseInt(1);
+
+        while (i <= 1000) {
+            document.write(num + ' x ' + i + ' = ' + (num * i) + '<br>');
+            i += 1;
+        } 
+    </script>
+
+    <script> // Do while
+        var num = parseFloat(prompt("Digite um número: "));
+
+        var i = parseInt(1111);
+
+        do {
+            document.write(num + ' x ' + i + ' = ' + (num * i) + '<br>');
+            i += 1;
+        } while (i <= 1000);
+    </script>
+
+    <script> // For
+        var num = parseFloat(prompt("Digite um número: "));
+
+        for (var i = 0; i <= 1000; i++) {
+            document.write(num + ' x ' + i + ' = ' + (num * i) + '<br>');
+        }
+    </script>
+</body>
+
+</html>

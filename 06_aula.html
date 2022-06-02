@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Exercicios</h1>
+
+    <script>
+        var player1 = parseInt(prompt("Digite um número jogador 1: "));
+        var player2 = parseInt(prompt("Digite um número jogador 2: "));
+        var regra = parseInt(Math.random() * 2);
+
+        // regra para ver o ganhador
+        if (player1 == player2) {
+            alert("Empate.");
+        }
+        else if ((regra == 0 && player1 < player2) || (regra == 1 && player1 > player2)) {
+            alert("player 1 wins");
+        }
+        else {
+            alert("player 2 wins");
+        }
+
+        // Ver qual número foi sorteado 
+        if (regra == 0) {
+            alert("número sorteado foi " + regra);
+        }
+        else {
+            alert("número sorteado foi " + regra);
+        }
+
+    </script>
+</body>
+
+</html>
