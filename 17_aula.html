@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Denis Rodrigues">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="aulas de javascript">
+    <title>Lógica de programação com javascript</title>
+
+    <style>
+        body {
+            background-color: #0f0f0f;
+            color: #f1f1f1;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Lógica de programação com javascript</h1>
+
+    <button onclick="mostrarAreaAlert()">Mostrar área no alert</button>
+    <button onclick="mostrarAreaDiv()">Mostrar área na div</button>
+
+    <div id="output"></div>
+
+    <script>
+        function mostrarAreaAlert() {
+            var largura = parseFloat(prompt('Digite a largura: '));
+            var altura = parseFloat(prompt('Digite a altura: '));
+            var area = calcularArea(largura, altura);
+            alert('O tamanho da área é de: ' + area);
+        }
+
+        function mostrarAreaDiv() {
+            var largura = parseFloat(prompt('Digite a largura: '));
+            var altura = parseFloat(prompt('Digite a altura: '));
+            var area = calcularArea(largura, altura);
+            document.querySelector('#output').innerHTML = ('O tamanho da área é de: ' + area);
+        }
+
+        function calcularArea(l, a) {
+            return l * a;
+        }
+    </script>
+</body>
+
+</html>
