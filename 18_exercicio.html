@@ -45,30 +45,42 @@
     <div id="output"></div>
 
     <script>
-        function start() {
-            n1 = parseFloat(prompt('Digite um número: '))
-            escreve(n1);
+        function escreve(mensagem) {
+            var output = document.querySelector('#output');
+            output.innerHTML = mensagem;
         }
 
         function reset() {
             escreve('');
         }
 
+        function start() {
+            n1 = parseFloat(prompt('Digite um número: '))
+            escreve(n1);
+        }
+
         function iniciarCalculo(simbolo) {
             var n2 = parseFloat(prompt('Digite outro número'));
-
-            var msg = calcular(simbolo, n1, n2);
-            n1 = msg;
+            try {
+                var msg = calcular(simbolo, n1, n2);
+                n1 = msg;
+            } catch (e) {
+                escreve(e);
+            }
 
             escreve(msg);
         }
 
-        function escreve(mensagem) {
-            var output = document.querySelector('#output');
-            output.innerHTML = mensagem;
-        }
-
         function calcular(simbolo, n1, n2) {
+            console.log(simbolo);
+
+            if (simbolo != '+' && simbolo != '-' && simbolo != '*' && simbolo != '/') {
+                throw new Error('Digite um simbolo valido');
+            }
+
+            if (isNaN(n1) || isNaN(n2)) {
+                throw new Error('Digite somente números.');
+            }
 
             var resp = null;
 

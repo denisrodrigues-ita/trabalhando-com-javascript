@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Denis Rodrigues">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="aulas de javascript">
+    <title>Lógica de programação com javascript</title>
+
+</head>
+
+<body>
+    <h1>Exercicios</h1>
+    <p>Aperte start para calcular a área do retangulo.</p>
+    <button onclick="mostrarNaDiv()">Mostrar da div</button>
+    <button onclick="mostrarNoAlert()">Mostrar no alert</button>
+    <div id="output"></div>
+
+
+    <script>
+        function mostrarNoAlert() {
+            var lado1 = parseFloat(prompt('Digite a largura do retangulo: '));
+            while (isNaN(lado1)) {
+                var lado1 = parseFloat(prompt('Digite uma largura valida para o retangulo: '));
+            }
+            var lado2 = parseFloat(prompt('Digite a altura do retangulo: '));
+            while (isNaN(lado2)) {
+                var lado2 = parseFloat(prompt('Digite uma altura valida para o retangulo: '));
+            }
+            try {
+                var resp = calculo(lado1, lado2);
+            } catch (e) {
+                alert(e);
+            }
+
+            alert('a área total é: ' + resp + 'm²');
+        }
+
+        function mostrarNaDiv() {
+            var lado1 = parseFloat(prompt('Digite a largura do retangulo: '));
+            while (isNaN(lado1)) {
+                var lado1 = parseFloat(prompt('Digite uma largura valida para o retangulo: '));
+            }
+            var lado2 = parseFloat(prompt('Digite a altura do retangulo: '));
+            while (isNaN(lado2)) {
+                var lado2 = parseFloat(prompt('Digite uma altura valida para o retangulo: '));
+            }
+            try {
+                var resp = calculo(lado1, lado2);
+            } catch (e) {
+                resp = e;
+            }
+
+            document.querySelector('#output').innerHTML = 'A área total do retangulo é: ' + resp + 'm²';
+        }
+
+        function calculo(a, b) {
+
+            if (a === undefined || b === undefined) {
+                throw new Erro("Calculo precisa receber dois números.")
+            }
+
+            if (isNaN(a) || isNaN(b)) {
+                throw new Error("Digite números validos.")
+            }
+
+            return a * b;
+        }
+
+    </script>
+</body>
+
+</html>

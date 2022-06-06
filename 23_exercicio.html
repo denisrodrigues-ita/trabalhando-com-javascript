@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Denis Rodrigues">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="aulas de javascript">
+    <title>Lógica de programação com javascript</title>
+
+</head>
+
+<body>
+    <h1>Exercicio</h1>
+
+    <button onclick="addProduto()">Add Produto</button>
+    <button onclick="mostrarProduto()">Mostrar produto</button>
+    <button onclick="venderProduto()">Vender produto</button>
+    <button onclick="mostrarmateriais()">mostrar materiais</button>
+
+    <div id="output"></div>
+
+
+    <script>
+        function addProduto() {    
+            produto = new Object();
+            produto.nome = prompt('Nome do produto: ');
+            produto.preco = parseFloat(prompt('Valor do produto: '));
+            produto.estoque = parseFloat(prompt('Quantidade do produto: '));
+            
+        }
+
+        function mostrarmateriais {
+            for (var i = 0; i < materiais.le)
+        }
+
+        function mostrarProduto() {
+            var msg = '';
+            msg += 'Produto: ' + produto.nome + '<br>';
+            msg += 'Preço: R$' + produto.preco + '<br>';
+            msg += 'Quantidade em estoque: ' + produto.estoque + '<br>';
+
+            document.querySelector('#output').innerHTML = msg;
+        }
+
+        function venderProduto() {
+            var venda = parseInt(prompt('Quantidade vendida: '))
+           
+            produto.estoque = produto.estoque - venda;
+        }
+
+    </script>
+</body>
+
+</html>

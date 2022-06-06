@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Denis Rodrigues">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="aulas de javascript">
+    <title>Lógica de programação com javascript</title>
+
+</head>
+
+<body>
+    <h1>Exercicio</h1>
+
+    <div id="output"></div>
+
+
+    <script>
+        var lista = new Array(25, 30, 10, 50, 7, 8, 20, 80, 33, 55, 37, 21, 4);
+
+        var soma = 0;
+        for (var i = 0; i < lista.length; i++) {
+            if (lista[i] % 2 === 0 && !isNaN(lista[i])) {
+                soma += lista[i];
+            }
+        }
+        document.querySelector('#output').innerHTML = 'A soma dos números pares é de: ' + soma; 
+        
+
+    </script>
+</body>
+
+</html>
