@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Denis Rodrigues">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="aulas de javascript">
+    <title>Lógica de programação com javascript</title>
+
+</head>
+
+<body>
+    <h1>Exercicio</h1>
+
+    <div id="output"></div>
+
+
+    <script>
+        (function () {
+            function calcularMedia() {
+                var total = 0;
+                var x = 0;
+                var qtd = arguments.length;
+
+                while (typeof arguments[x] == 'number') {
+                    total += arguments[x];
+                    x++;
+                }
+                return total / qtd;
+            }
+
+            var media1 = calcularMedia(2, 0,  3, 10);
+            var media2 = calcularMedia(10, 20, 30, 40);
+
+            console.log('media1: ', media1);
+            console.log('media2: ', media2);
+        })()
+    </script>
+</body>
+
+</html>
