@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Denis Rodrigues">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="aulas de javascript">
+    <title>Lógica de programação com javascript</title>
+
+</head>
+
+<body>
+    <h1>Cálculo do IMC</h1>
+
+    <label>Peso <input type="text" id="inputPeso" placeholder="Digite aqui o seu peso."></label>
+    <label>Altura <input type="text" id="inputAltura" placeholder="Digite aqui sua altura."></label>
+
+
+    <button onclick="imc()">Calcular IMC</button>
+    <div id="output"></div>
+
+
+
+    <script>
+        function imc() {
+            var peso = document.getElementById("inputPeso").value;
+            var altura = document.getElementById("inputAltura").value;
+
+            try {
+                var imc = calculoImc(peso, altura);
+            } catch (e) {
+                alert(e);
+            }
+
+            try {
+                var classificacao = classificaImc(imc);
+            } catch (e) {
+                alert(e);
+            }
+
+            document.getElementById('output').innerHTML = 'Seu IMC é de: ' + imc + '<br>' + 'Classificação: ' + classificacao;
+        }
+
+        function calculoImc(p, a) {
+
+            if (isNaN(p) || isNaN(a)) {
+                throw new Error('Digite somente números');
+            }
+
+            var imc = null;
+
+            imc = p / Math.pow(a, 2);
+
+            return imc;
+        }
+
+        function classificaImc(a) {
+
+            if (typeof (a) != 'number') {
+                throw new Error('Digite somente números.');
+            }
+
+            if (a <= 16.9) {
+                return 'Muito abaixo do peso';
+            }
+            else if (a <= 18.4) {
+                return 'Abaixo do peso';
+            }
+            else if (a <= 24.9) {
+                return 'Peso normal';
+            }
+            else if (a <= 29.9) {
+                return 'Acima do peso';
+            }
+            else if (a <= 34.9) {
+                return 'Obsidade grau I';
+            }
+            else if (a <= 40) {
+                return 'Obsidade grau II';
+            }
+            else {
+                return 'Obsidade grau III';
+            }
+        }
+    </script>
+</body>
+
+</html>
