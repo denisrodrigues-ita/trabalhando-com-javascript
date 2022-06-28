@@ -1,0 +1,29 @@
+.img1 {
+    width: 70vw;
+    height: 50vh;
+    background-image: url('images/1.jpg');
+}
+
+.img2 {
+    width: 70vw;
+    height: 50vh;
+    background-image: url('images/2.jpg');
+}
+
+.img3 {
+    width: 70vw;
+    height: 50vh;
+    background-image: url('images/3.jpg');
+}
+
+.img4 {
+    width: 70vw;
+    height: 50vh;
+    background-image: url('images/4.jpg');
+}
+
+.img5 {
+    width: 70vw;
+    height: 50vh;
+    background-image: url('images/5.jpg');
+}

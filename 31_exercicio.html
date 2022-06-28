@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pr-br">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -20,31 +20,35 @@
     <div class="container">
         <h1>Exercicio</h1>
 
-        <button onclick="cadastrarUsuario()">Add usuario</button>
-        <button onclick="mostrarUsuario()">Mostrar usuario</button>
+        <button id="btnAddName">Add nome</button>
+        <button id="btnMostrarPessoas">Mostrar Pessoas</button>
 
         <div id="output"></div>
     </div>
 
+
     <script>
-        var listaDeUsuarios = new Array();
+        pessoalist = new Array();
 
-        function cadastrarUsuario() {
-            var usuario = new Object();
-            usuario.nome = prompt('Digite o nome do usúario');
-            usuario.email = prompt('Digite o email do usuario');
-            listaDeUsuarios.push(usuario);
-        }
+        var btnName = document.getElementById('btnAddName');
+        var btnMostrar = document.getElementById('btnMostrarPessoas');
 
-        function mostrarUsuario() {
+        btnName.addEventListener('click', function () {
+            'use strict'
+            var pessoa = new Object();
+            pessoa.nome = prompt('Digite seu nome: ');
+            pessoa.sobrenome = prompt('Digite seu sobrenome: ');
+            pessoalist.push(pessoa);
+        })
+
+        btnMostrar.addEventListener('click', function () {
             var msg = '';
-            for (var i = 0; i < listaDeUsuarios.length; i++) {
-                msg += 'Nome: ' + listaDeUsuarios[i].nome + '<br>';
-                msg += 'email: ' + listaDeUsuarios[i].email + '<hr>';
+            for (var i = 0; i < pessoalist.length; i++) {
+                msg += pessoalist[i].nome + ' ' + pessoalist[i].sobrenome + '<br>';
             }
 
             document.querySelector('#output').innerHTML = msg;
-        }
+        })
 
     </script>
 </body>
